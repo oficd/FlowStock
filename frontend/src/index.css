@@ -1,0 +1,73 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --ink: #172033;
+  --muted: #687386;
+  --line: #e4e8f0;
+  --surface: #ffffff;
+  --primary: #315bdc;
+  --primary-dark: #2448b5;
+  --success: #18794e;
+  --danger: #c03945;
+  --warning: #966116;
+  --info: #21618c;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: #f5f7fb; }
+a { color: var(--primary); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid rgba(49, 91, 220, .28); outline-offset: 2px;
+}
+
+.app-navbar { background: #172033; min-height: 64px; }
+.app-navbar .container { max-width: 1240px; }
+.navbar-brand { color: #fff !important; font-weight: 700; letter-spacing: .04em; }
+.navbar-brand span { color: #8fa9ff; }
+.app-navbar .nav-link { color: #cbd4e7 !important; font-size: .9rem; }
+.app-main { width: min(1240px, 100%); margin: 0 auto; padding: 32px 24px 56px; }
+
+.container { max-width: none; }
+.card, .sidebar-card { background: var(--surface); border: 1px solid var(--line) !important; border-radius: 12px !important; box-shadow: 0 2px 8px rgba(23, 32, 51, .04) !important; }
+.card-header { padding: 18px 22px; background: var(--surface); border-bottom: 1px solid var(--line); color: var(--ink); font-size: .78rem; font-weight: 700; letter-spacing: .08em; }
+.card-body { padding: 22px; }
+.sidebar-card { overflow: hidden; }
+.sidebar-heading { padding: 18px 20px 10px; color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.sidebar-nav { padding: 8px 10px 12px; }
+.sidebar-nav .list-group-item { border: 0; border-radius: 8px; color: var(--muted); padding: 11px 12px; font-size: .92rem; }
+.sidebar-nav .list-group-item:hover, .sidebar-nav .list-group-item:focus { background: #eef2ff; color: var(--primary); }
+.sidebar-nav .list-group-item:last-child { margin-top: 8px; border-top: 1px solid var(--line); border-radius: 0; padding-top: 16px; color: var(--danger); }
+
+h1, h2, h3, h4 { color: var(--ink); font-weight: 700; }
+h1 { font-size: clamp(1.75rem, 3vw, 2.35rem); letter-spacing: -.03em; }
+.form-control, .form-select { min-height: 42px; border: 1px solid #d7ddea; border-radius: 8px; color: var(--ink); }
+.form-control:focus, .form-select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(49, 91, 220, .12); }
+label { color: var(--ink); font-size: .86rem; }
+.btn { min-height: 40px; border-radius: 8px !important; padding: .55rem .9rem; font-size: .84rem; font-weight: 600; }
+.btn-primary { background: var(--primary); border-color: var(--primary); }
+.btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); }
+.btn-success { background: var(--success); border-color: var(--success); }
+.btn-danger { background: var(--danger); border-color: var(--danger); }
+.btn-secondary { color: var(--ink); background: #eef1f6; border-color: #eef1f6; }
+.table { margin-bottom: 0; color: var(--ink); vertical-align: middle; }
+.table-responsive { overflow-x: auto; }
+.table > :not(caption) > * > * { padding: 13px 12px; border-bottom-color: var(--line); }
+.table thead th { background: #f7f8fb !important; color: var(--muted) !important; border-bottom: 1px solid var(--line); font-size: .72rem; letter-spacing: .05em; text-transform: uppercase; }
+.table tbody tr:hover { background: #fafbfe; }
+.alert { border: 1px solid transparent; border-radius: 8px !important; font-size: .9rem; }
+.alert-info { color: var(--info); background: #edf7fc; border-color: #cce8f5; }
+.alert-danger { color: var(--danger); background: #fff0f1; border-color: #f3cdd0; }
+
+@media (max-width: 767px) {
+  .app-main { padding: 20px 14px 40px; }
+  .app-main .row { --bs-gutter-y: 18px; }
+  .card-body { padding: 16px; }
+  .card-header { padding: 15px 16px; }
+  .sidebar-nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px; }
+  .sidebar-nav .list-group-item:last-child { grid-column: 1 / -1; }
+  .table { min-width: 620px; }
+}
